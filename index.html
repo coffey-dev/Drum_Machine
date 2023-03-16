@@ -11,14 +11,41 @@
     <title>Robotic Sounds Machine</title>
     <script>
         function play(str) {
-            console.log(str, " The string passed in")
-          var audio = document.getElementById(str);
+         if (str === "q" || str === "Q") {
+        document.getElementById("display").innerText = "Blart";
+    }
+    else if (str === "w" || str === "W"){
+        document.getElementById("display").innerText = "Bleep";
+    }
+    else if (str === "e" || str === "E"){
+        document.getElementById("display").innerText = "Clonk";
+    }
+    else if (str === "a" || str === "A"){
+        document.getElementById("display").innerText = "Hardnote";
+    }
+    else if (str === "s" || str === "S"){
+        document.getElementById("display").innerText = "Meep";
+    }
+    else if (str === "d" || str === "D"){
+        document.getElementById("display").innerText = "Silly Echozap";
+    }
+    else if (str === "z" || str === "Z"){
+        document.getElementById("display").innerText = "Triple Laser";
+    }
+    else if (str === "x" || str === "X"){
+        document.getElementById("display").innerText = "Two Hit";
+    }
+    else if (str === "c" || str === "C"){
+        document.getElementById("display").innerText = "Video Glide";
+    }
+
+         var audio = document.getElementById(str);
           audio.play();
         }
 
 window.document.onkeyup = function(event) {
-    let keystroke = event.key
-    if (event.key === "q" || event.key === "Q") {
+    let keystroke = event.key;
+    if (keystroke === "q" || keystroke === "Q") {
         play("Q")
     }
     else if (keystroke === "w" || keystroke === "W"){
@@ -42,9 +69,10 @@ window.document.onkeyup = function(event) {
     else if (keystroke === "x" || keystroke === "X"){
         play("X")
     }
-    else if (keystroke === "C" || keystroke === "C"){
+    else if (keystroke === "c" || keystroke === "C"){
         play("C")
     }
+    
 }
 
       </script>
@@ -52,7 +80,11 @@ window.document.onkeyup = function(event) {
   <body>
     <div class="container" id="drum-machine">
     <h1 class="text-center" >Robotic Sounds Machine</h1>
-    <div id="display"></div>
+    <div class="card my-3">
+        <div class="card-body">
+    <div id="display" class="text-center">Nothing yet to display</div>
+    </div>
+</div>
     <button class=" drum-pad btn btn-block btn-primary" id="drum-0" onClick="play('Q')">
         Q
     <audio src="./clip/videoglide.wav" class="clip" id="Q"></audio>
