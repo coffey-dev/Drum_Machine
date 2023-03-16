@@ -11,9 +11,42 @@
     <title>Robotic Sounds Machine</title>
     <script>
         function play(str) {
+            console.log(str, " The string passed in")
           var audio = document.getElementById(str);
           audio.play();
         }
+
+window.document.onkeyup = function(event) {
+    let keystroke = event.key
+    if (event.key === "q" || event.key === "Q") {
+        play("Q")
+    }
+    else if (keystroke === "w" || keystroke === "W"){
+        play("W")
+    }
+    else if (keystroke === "e" || keystroke === "E"){
+        play("E")
+    }
+    else if (keystroke === "a" || keystroke === "A"){
+        play("A")
+    }
+    else if (keystroke === "s" || keystroke === "S"){
+        play("S")
+    }
+    else if (keystroke === "d" || keystroke === "D"){
+        play("D")
+    }
+    else if (keystroke === "z" || keystroke === "Z"){
+        play("Z")
+    }
+    else if (keystroke === "x" || keystroke === "X"){
+        play("X")
+    }
+    else if (keystroke === "C" || keystroke === "C"){
+        play("C")
+    }
+}
+
       </script>
   </head>
   <body>
@@ -22,7 +55,7 @@
     <div id="display"></div>
     <button class=" drum-pad btn btn-block btn-primary" id="drum-0" onClick="play('Q')">
         Q
-    <audio src="./clip/alarmblop.wav" class="clip" id="Q"></audio>
+    <audio src="./clip/videoglide.wav" class="clip" id="Q"></audio>
     </button>
     <button class=" drum-pad btn btn-block btn-primary" id="drum-1" onClick="play('W')" >
         W
